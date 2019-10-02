@@ -1,0 +1,5 @@
+Dialog system derived (with modifications) from:
+Godot Open Dialogue - J. Sena (jsena42)
+https://bitbucket.org/jsena42/godot-open-dialogue/src
+Licensed under Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/

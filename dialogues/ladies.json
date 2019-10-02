@@ -1,0 +1,10 @@
+{
+  "first": {
+    "type": "text",
+    "content": "We were going to go to the furniture store, but we decided to bake a pie instead."
+  },
+  "repeat": {
+    "type": "text",
+    "content": "We don't have a stove, so we used magic."
+  }
+}

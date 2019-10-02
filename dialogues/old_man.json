@@ -1,0 +1,71 @@
+{
+  "first": {
+    "type": "text",
+    "content": "The bridge is out!| Some darn ruffians borked it good. I can get it fixed right up with some supplies.",
+    "next": "0"
+  },
+  "0": {
+    "type": "text",
+    "content": "I have some planks and nails in my basement.| Would you mind grabbing them? My house is the peach one just to the west here.",
+  },
+  "repeat": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "checked_locked_door",
+    "value": "true",
+    "true": "need_to_unlock_that_door",
+    "false": "0"
+  },
+  "need_to_unlock_that_door": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "planks_collected",
+    "value": "true",
+    "true": "need_a_hammer_diversion",
+    "false": "still_need_unlocked"
+  },
+  "still_need_unlocked": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "It's locked you say?| I bet my grandkids ran off with the key again.| They're at the playground down south by the cliff.| Probably not a very good place for a playground now that I think about it.",
+    "value": [["directed_to_children", "true"]]
+  },
+  "need_a_hammer_diversion": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "hammer_collected",
+    "value": "true",
+    "true": "gg",
+    "false": "need_a_hammer_remove_planks"
+  },
+  "need_a_hammer_remove_planks": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "delete_item",
+    "next": "need_a_hammer"
+  },
+  "need_a_hammer": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Well... This is embarassing...| After all that, I don't have my hammer.| You didn't happen to see it in the basement anywhere did you?",
+    "value": [["hammer_requested", "true"]]
+  },
+  "gg": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "delete_item",
+    "next": "you_win"
+  },
+  "you_win": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "demo_over",
+    "text": "Amazing job!"
+  }
+
+}

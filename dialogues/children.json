@@ -1,0 +1,66 @@
+{
+  "first": {
+    "type": "text",
+    "content": "HELLO!",
+    "next": "0"
+  },
+  "0": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "directed_to_children",
+    "value": "true",
+    "true": "check_for_pie",
+    "false": "cant_wait"
+  },
+  "check_for_pie": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "pie_collected",
+    "value": "true",
+    "true": "thanks_here_is_a_key",
+    "false": "where_is_the_key"
+  },
+  "where_is_the_key": {
+    "type": "question",
+    "text": "Yeah, we have the key!| We'll trade you the key for a slice of pie!| Will you get us some pie?",
+    "options": ["Yes", "Pie is bad for you"],
+    "next": ["yes", "no"]
+  },
+  "yes": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Thank you so much!| The nice ladies in the house next to grandpa's make the best blueberry pie!",
+    "value": [["need_yummy_pie", "true"]]
+  },
+  "no": {
+    "type": "text",
+    "content": "The threads of fate have been unwoven.| So shall the bake off never come to pass.",
+    "next": "byebye"
+  },
+  "byebye": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "game_over"
+  },
+  "cant_wait": {
+    "type": "text",
+    "content": "We can't wait for the bake off!"
+  },
+  "thanks_here_is_a_key": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "Ooooh!| This pie is the best! Thanks!!!",
+    "value": [["delivered_pie", "true"]],
+    "next": "thanks_for_pie"
+  },
+  "thanks_for_pie": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "delete_item",
+    "text": "Oh yeah! We actually gave the key to your grandma!"
+  }
+}

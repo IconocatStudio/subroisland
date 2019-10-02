@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/pixel_operator/PixelOperatorMono-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Font/pixel_operator/PixelOperatorMono.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = SubResource( 3 )
+
+[node name="Choice" type="RichTextLabel"]
+margin_right = 100.0
+margin_bottom = 22.0
+rect_clip_content = false
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Choice Text"
+text = "Choice Text"
+scroll_active = false

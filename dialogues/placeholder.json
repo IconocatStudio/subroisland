@@ -1,0 +1,10 @@
+{
+  "first": {
+    "type": "text",
+    "content": "This is a placeholder text.| If you see this text, something is messed up."
+  },
+  "repeat": {
+    "type": "text",
+    "content": "Hello.| I still have no meaningful dialog.| Sorry!"
+  }
+}

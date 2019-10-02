@@ -1,0 +1,35 @@
+{
+  "first": {
+    "type": "text",
+    "content": "Ooooh! I am evil houseplant here to block your way and artificially increase the game's length!",
+    "next": "0"
+  },
+  "0": {
+    "type": "text",
+    "content": "Let's see. What menial fetch task should I have you do?",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "content": "It's rather lonely in here.| Kind of sparse too...",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "content": "Bring me...| A shrubbery!",
+    "next": "3"
+  },
+  "3": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["remove_plant", "true"]],
+    "next": "force_reprocess"
+  },
+  "force_reprocess": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "force_reprocess",
+    "text": "Just Kidding.",
+  }
+}

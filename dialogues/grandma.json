@@ -1,0 +1,10 @@
+{
+  "first": {
+    "type": "text",
+    "content": "Deary, the annual island bake off is coming up! We need some honey for grandma's famous cookies! The store east of town should have some!"
+  },
+  "repeat": {
+    "type": "text",
+    "content": "We might need a stove too, but we'll cross that bridge when we come to it..."
+  }
+}

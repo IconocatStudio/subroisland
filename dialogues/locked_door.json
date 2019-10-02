@@ -1,0 +1,68 @@
+{
+  "first": {
+    "type": "text",
+    "content": "Hmm...",
+    "next": "fork_the_convo_with_a_door"
+  },
+  "fork_the_convo_with_a_door": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "dialogues",
+    "variable": "old_man",
+    "value": true,
+    "true": "check_unlock",
+    "false": "why_am_i_here"
+  },
+  "check_unlock": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "checked_locked_door",
+    "value": "true",
+    "true": "still_locked",
+    "false": "first_unlock_try"
+  },
+  "why_am_i_here": {
+    "type": "text",
+    "content": "Maybe I shouldn't mess around in other people's houses."
+  },
+  "first_unlock_try": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "text": "It's locked...| Maybe I should confront the old man about this absolutely egregious error?",
+    "value": [["checked_locked_door", "true"]]
+  },
+  "still_locked": {
+    "type": "divert",
+    "condition": "equal",
+    "dictionary": "variables",
+    "variable": "key_collected",
+    "value": "true",
+    "true": "unlock_door",
+    "false": "cant_open"
+  },
+  "cant_open": {
+    "type": "text",
+    "content": "It's still locked and I don't have a key."
+  },
+  "unlock_door": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [["door_unlocked", "true"]],
+    "next": "door_is_gone"
+  },
+  "door_is_gone": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "delete_item",
+    "next": "force_reprocess"
+  },
+  "force_reprocess": {
+    "type": "action",
+    "operation": "game_action",
+    "value": "force_reprocess",
+    "text": "Nice, the key worked!"
+  }
+}

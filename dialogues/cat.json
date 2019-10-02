@@ -1,0 +1,10 @@
+{
+  "first": {
+    "type": "text",
+    "content": "I'm a cat.| Meow!"
+  },
+  "repeat": {
+    "type": "text",
+    "content": "I'm still a cat."
+  }
+}
